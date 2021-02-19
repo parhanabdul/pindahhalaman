@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+
+//// LIST VIEW MEMBUAT KOTA2
+
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  List<Color> colors = [
+    Colors.amberAccent,
+    Colors.blue,
+    Colors.blueGrey,
+    Colors.lightGreen,
+    Colors.blueAccent,
+    Colors.amber,
+  ];
+  List<String> name = [
+    "haduhg",
+    "cape",
+    "uhh",
+    "kaluna",
+    "julkana",
+    "koplili",
+  ];
+  List<String> name1 = [
+    "haduhg",
+    "cape",
+    "uhh",
+    "kaluna",
+    "julkana",
+    "koplili",
+  ];
+  List<String> name2 = [
+    "haduhg",
+    "cape",
+    "uhh",
+    "kaluna",
+    "julkana",
+    "koplili",
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+                child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: colors.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: new EdgeInsets.all(5),
+                          width: 150,
+                          height: 100,
+                          color: colors[index],
+                          child: Center(
+                            child: Text(name1[index]),
+                          ),
+                        );
+                      }),
+                ),
+
+                Padding(padding: const EdgeInsets.all(10)), //memberikan jarak
+                Container(
+                  height: 400,
+                  width: 400,
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: colors.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 150,
+                          height: 80,
+                          color: colors[index],
+                          child: Center(
+                            child: Text(name[index]),
+                          ),
+                        );
+                      }),
+                ),
+                //
+                Padding(padding: const EdgeInsets.all(10)),
+                Container(
+                  height: 80,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: colors.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: new EdgeInsets.all(5),
+                          width: 70,
+                          height: 80,
+                          color: colors[index],
+                          child: Center(
+                            child: Text(name2[index]),
+                          ),
+                        );
+                      }),
+                ),
+                // kotak kotak kecil
+                Container(
+                  height: 80,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: colors.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: new EdgeInsets.all(5),
+                          width: 70,
+                          height: 80,
+                          color: colors[index],
+                          child: Center(
+                            child: Text(name2[index]),
+                          ),
+                        );
+                      }),
+                ),
+              ], //tutup membuat container baru
+            )),
+          ),
+        ),
+      ),
+    );
+  }
+}
